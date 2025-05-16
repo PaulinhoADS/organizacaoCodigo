@@ -59,3 +59,19 @@ h1 {
   max-height: 350px;
   display: block;
 }
+
+/* Responsividade para telas menores */
+@media (max-width: 700px) {
+  .bloco-destaque {
+    flex-direction: column !important;
+    align-items: center;
+  }
+  .imagem-destaque,
+  .imagem-wrapper {
+    max-width: 100%;
+    min-width: 0;
+    width: 100%;
+    height: auto;
+    max-height: 300px;
+  }
+}
