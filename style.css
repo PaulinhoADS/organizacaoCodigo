@@ -59,3 +59,18 @@ h1 {
   /* A imagem vai ocupar toda a altura do wrapper */
   height: 100%;
 }
+
+/* Responsividade para telas menores */
+@media (max-width: 700px) {
+  .bloco-destaque {
+    flex-direction: column !important;
+    align-items: center;
+  }
+  .imagem-destaque,
+  .imagem-wrapper {
+    max-width: 100%;
+    min-width: 0;
+    width: 100%;
+    height: auto;
+  }
+}
