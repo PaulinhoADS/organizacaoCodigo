@@ -6,6 +6,11 @@
   font-family: Arial, sans-serif;
 }
 
+/* Centraliza o título */
+h1 {
+  text-align: center;
+}
+
 /* Bloco com texto e imagem lado a lado */
 .bloco-destaque {
   display: flex;
