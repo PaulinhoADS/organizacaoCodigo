@@ -15,7 +15,7 @@ h1 {
 .bloco-destaque {
   display: flex;
   align-items: center; /* centraliza verticalmente */
-  gap: 15px;
+  gap: 25px;
   margin-bottom: 40px;
 }
 
@@ -34,7 +34,7 @@ h1 {
   color: #2C3E50;
   font-family: 'Arial', sans-serif;
   font-size: 16px;
-  line-height: 1.4;
+  line-height: 1.5;
   max-width: 450px;
   min-width: 300px;
   text-align: justify;
