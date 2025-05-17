@@ -6,28 +6,25 @@
   font-family: Arial, sans-serif;
 }
 
-/* Centraliza o título */
-h1 {
-  text-align: center;
-}
-
 /* Bloco com texto e imagem lado a lado */
 .bloco-destaque {
   display: flex;
-  align-items: stretch;
+  align-items: stretch; /* fará a altura dos filhos igual */
   gap: 20px;
   margin-bottom: 40px;
 }
 
-/* Direções dos blocos */
+/* Primeiro bloco: texto à esquerda, imagem à direita */
 .bloco-direita {
   flex-direction: row;
 }
+
+/* Segundo bloco: imagem à esquerda, texto à direita */
 .bloco-esquerda {
   flex-direction: row-reverse;
 }
 
-/* Parágrafo ocupa toda altura do bloco */
+/* Estilização do texto */
 .texto-destaque {
   color: #2C3E50;
   font-family: 'Arial', sans-serif;
@@ -38,45 +35,39 @@ h1 {
   text-align: justify;
   display: flex;
   align-items: center;
-  height: 100%;
+  /* Para garantir que ocupe a altura toda do bloco */
 }
 
-/* Wrapper da imagem ocupa toda altura do bloco */
+/* Wrapper para a imagem garantir altura igual ao texto */
 .imagem-wrapper {
   display: flex;
   align-items: stretch;
-  height: 100%;
+  /* Altura automática, vai igualar à altura do bloco pelo align-items: stretch do bloco-destaque */
 }
 
-/* Imagem ocupa toda altura do wrapper */
+/* Estilização das imagens */
 .imagem-destaque {
   width: 100%;
   max-width: 350px;
   min-width: 200px;
-  height: 100%;      
   object-fit: cover;
   border-radius: 8px;
-  display: block;
+  /* A imagem vai ocupar toda a altura do wrapper */
+  height: 100%;
+  /* Se quiser um ajuste mais preciso, use min-height igual ao parágrafo */
 }
 
-/* Responsividade */
+/* Responsividade para telas menores */
 @media (max-width: 700px) {
   .bloco-destaque {
     flex-direction: column !important;
     align-items: center;
   }
-  .texto-destaque,
+  .imagem-destaque,
   .imagem-wrapper {
     max-width: 100%;
     min-width: 0;
     width: 100%;
     height: auto;
-  }
-  .imagem-destaque {
-    max-width: 100%;
-    min-width: 0;
-    width: 100%;
-    height: auto;
-    max-height: 300px;
   }
 }
