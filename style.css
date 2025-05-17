@@ -6,61 +6,66 @@ body {
 }
 
 main {
-    max-width: 900px;
+    max-width: 960px;
     margin: 40px auto;
     padding: 20px;
     background: #fff;
-    border-radius: 10px;
-    box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+    border-radius: 12px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.09);
 }
 
 h1 {
     text-align: center;
-    margin-bottom: 40px;
+    margin-bottom: 48px;
     color: #23425b;
-    font-size: 2.2em;
+    font-size: 2.3em;
     letter-spacing: 2px;
 }
 
-.section-flex {
+.dupla {
     display: flex;
     align-items: center;
     justify-content: space-between;
     gap: 40px;
-    margin-bottom: 40px;
+    margin-bottom: 48px;
 }
 
-.section-flex .texto,
-.section-flex .imagem {
-    flex: 1;
+.dupla .lado-esquerdo,
+.dupla .lado-direito {
+    flex: 1 1 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
-.section-flex .texto {
-    font-size: 1.13em;
+.dupla .lado-esquerdo p,
+.dupla .lado-direito p {
+    font-size: 1.15em;
     color: #333;
     line-height: 1.7;
     padding: 10px;
+    margin: 0;
 }
 
-.section-flex .imagem {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.section-flex .imagem img {
+.dupla img {
     max-width: 100%;
     max-height: 280px;
     border-radius: 10px;
     box-shadow: 0 2px 8px rgba(0,0,0,0.07);
+    display: block;
 }
 
-@media (max-width: 800px) {
-    .section-flex {
+.dupla.invertida {
+    flex-direction: row-reverse;
+}
+
+/* Responsividade */
+@media (max-width: 850px) {
+    .dupla, .dupla.invertida {
         flex-direction: column;
         gap: 20px;
     }
-    .section-flex .imagem img {
+    .dupla img {
         max-height: 180px;
     }
 }
