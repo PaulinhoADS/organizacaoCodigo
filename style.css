@@ -43,13 +43,6 @@ h1 {
   height: 100%; /* ocupa toda a altura do bloco */
 }
 
-/* Wrapper para a imagem garantir altura igual ao texto */
-.imagem-wrapper {
-  display: flex;
-  align-items: stretch;
-  height: 100%; /* ocupa toda a altura do bloco */
-}
-
 /* Estilização das imagens */
 .imagem-destaque {
   width: 100%;
