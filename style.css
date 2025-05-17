@@ -24,7 +24,7 @@ h1 {
 
 .dupla {
     display: flex;
-    align-items: center;
+    align-items: stretch; /* faz os blocos terem a mesma altura */
     justify-content: space-between;
     gap: 40px;
     margin-bottom: 48px;
@@ -45,6 +45,7 @@ h1 {
     line-height: 1.7;
     padding: 10px;
     margin: 0;
+    text-align: justify; /* alinhamento dos textos */
 }
 
 .dupla img {
@@ -55,7 +56,6 @@ h1 {
     display: block;
 }
 
-/* Para inverter a ordem na segunda dupla */
 .dupla.invertida {
     flex-direction: row-reverse;
 }
@@ -65,6 +65,7 @@ h1 {
     .dupla, .dupla.invertida {
         flex-direction: column;
         gap: 20px;
+        align-items: stretch;
     }
     .dupla img {
         max-height: 180px;
