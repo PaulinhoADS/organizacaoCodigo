@@ -7,13 +7,16 @@
 }
 
 h1 {
+  display: flex;
+  justify-content: center;
   text-align: center;
+  width: 100%;
 }
 
-/* Bloco com texto e imagem lado a lado (primeiro bloco: texto à esquerda, imagem à direita) */
+/* Bloco com texto e imagem lado a lado */
 .bloco-destaque {
   display: flex;
-  align-items: stretch; /* Faz a imagem e o texto terem o mesmo tamanho vertical */
+  align-items: center; /* Garante que texto e imagem fiquem alinhados verticalmente */
   gap: 15px;
   margin-bottom: 40px;
 }
@@ -28,7 +31,7 @@ h1 {
   flex-direction: row-reverse;
 }
 
-/* Estilização do texto */
+/* Ajuste para o texto ocupar o mesmo espaço que a imagem */
 .texto-destaque {
   color: #2C3E50;
   font-family: 'Arial', sans-serif;
@@ -37,25 +40,14 @@ h1 {
   max-width: 450px;
   min-width: 300px;
   text-align: justify;
-  display: flex;
-  align-items: center;
+  flex: 1; /* Faz o texto ocupar metade do espaço do bloco */
 }
 
-/* Estilização das imagens */
+/* Ajuste para a imagem ocupar o mesmo espaço que o texto */
 .imagem-destaque {
-  width: 100%;
-  max-width: 350px;
-  min-width: 200px;
-  height: 90%;
+  max-width: 450px;
+  min-width: 300px;
   border-radius: 8px;
   object-fit: cover;
-  display: flex;
-  align-items: center;
-  /* Garante que a imagem fique esticada para acompanhar o parágrafo */
-  /* O height será igual ao height do texto pelo alinhamento stretch do flex */
-}
-
-/* Garante que a imagem ocupe a altura do texto (flex container) */
-.bloco-destaque .imagem-destaque {
-  max-height: 100%;
+  flex: 1; /* Faz a imagem ocupar metade do espaço do bloco */
 }
