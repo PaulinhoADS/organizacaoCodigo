@@ -1,93 +1,62 @@
 /* Container centralizado */
 .container {
-    max-width: 900px;
-    margin: 0 auto; /* Centraliza o bloco na página */
-    padding: 20px;
-    font-family: Arial, sans-serif;
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 20px;
+  font-family: Arial, sans-serif;
 }
 
+/* Centraliza o título */
 h1 {
-    text-align: center; /* Garante que o título esteja centralizado */
-    margin-bottom: 40px; /* Adiciona espaço abaixo do título */
+  text-align: center;
 }
 
 /* Bloco com texto e imagem lado a lado */
 .bloco-destaque {
-    display: flex;
-    /* align-items: stretch é a chave para que os itens filhos (texto e imagem/wrapper) tenham a mesma altura */
-    align-items: stretch;
-    gap: 30px; /* Espaço entre o texto e a imagem */
-    margin-bottom: 50px; /* Espaço entre os blocos */
-    flex-wrap: wrap; /* Permite que os itens quebrem para a linha de baixo em telas menores */
+  display: flex;
+  align-items: stretch; /* estica filhos igualmente em altura */
+  gap: 20px;
+  margin-bottom: 40px;
 }
 
 /* Primeiro bloco: texto à esquerda, imagem à direita */
 .bloco-direita {
-    flex-direction: row;
+  flex-direction: row;
 }
 
 /* Segundo bloco: imagem à esquerda, texto à direita */
 .bloco-esquerda {
-    flex-direction: row-reverse;
+  flex-direction: row-reverse;
 }
 
-/* Estilização do texto (Item Flex) */
+/* Estilização do texto */
 .texto-destaque {
-    color: #2C3E50;
-    font-family: 'Arial', sans-serif;
-    font-size: 18px;
-    line-height: 1.6;
-    text-align: justify;
-    /* Permite que o texto cresça e encolha, mas com limites definidos */
-    flex: 1; /* shorthand para flex-grow: 1, flex-shrink: 1, flex-basis: 0% */
-    min-width: 300px; /* Largura mínima para o texto antes de quebrar */
-    max-width: 600px; /* Largura máxima desejada para o texto */
-    /* Removido 'display: flex' e 'align-items' daqui, pois .texto-destaque é um item flex, não um container flex */
+  color: #2C3E50;
+  font-family: 'Arial', sans-serif;
+  font-size: 18px;
+  line-height: 1.6;
+  max-width: 450px;
+  min-width: 300px;
+  text-align: justify;
+  display: flex;
+  align-items: center;
+  height: 100%; /* ocupa toda a altura do bloco */
 }
 
-/* Estilização do wrapper da imagem (Item Flex que contém a imagem) */
-.imagem-destaque-wrapper {
-    /* Não permite que o wrapper da imagem cresça, apenas encolha se necessário */
-    flex-grow: 0;
-    flex-shrink: 0;
-    /* Define uma largura base para a imagem, que será respeitada se houver espaço */
-    flex-basis: 350px; /* Largura base para a imagem */
-    min-width: 250px; /* Largura mínima para a imagem antes de quebrar ou se tornar muito pequena */
-    width: 100%; /* Ocupa 100% da largura disponível no flex item wrapper */
-    /* Removido 'display: flex' e 'align-items' daqui */
-    /* align-items: stretch no PARENT (.bloco-destaque) faz este wrapper ter a mesma altura do texto */
+/* Wrapper para a imagem garantir altura igual ao texto */
+.imagem-wrapper {
+  display: flex;
+  align-items: stretch;
+  height: 100%; /* ocupa toda a altura do bloco */
 }
 
-/* Estilização da imagem dentro do wrapper */
-.imagem-destaque-wrapper img {
-    display: block; /* Remove qualquer espaço extra abaixo da imagem */
-    width: 100%; /* Faz a imagem preencher a largura do seu container (.imagem-destaque-wrapper) */
-    height: 100%; /* Faz a imagem preencher a ALTURA do seu container (que esticou) */
-    object-fit: cover; /* Garante que a imagem cubra a área sem distorção (pode cortar partes) */
-    border-radius: 8px;
-}
-
-/* Media Query para telas menores (empilha os elementos) */
-@media (max-width: 768px) {
-    .bloco-destaque {
-        flex-direction: column; /* Empilha texto e imagem em colunas */
-        align-items: center; /* Centraliza os itens (texto e imagem) na coluna */
-    }
-
-    .texto-destaque,
-    .imagem-destaque-wrapper {
-        width: 100%; /* Ocupa toda a largura disponível na coluna */
-        max-width: 100%; /* Remove a limitação de max-width em telas pequenas */
-        min-width: unset; /* Remove o min-width em telas pequenas */
-    }
-
-     .imagem-destaque-wrapper {
-         flex-basis: auto; /* Remove a base flex */
-     }
-
-     .imagem-destaque-wrapper img {
-         height: auto; /* Permite que a altura da imagem seja automática para evitar distorção */
-         max-height: 300px; /* Opcional: Limita a altura máxima da imagem empilhada */
-         object-fit: contain; /* Opcional: Usa 'contain' para ver a imagem inteira, ou mantenha 'cover' se quiser preencher o espaço (com corte) */
-     }
+/* Estilização das imagens */
+.imagem-destaque {
+  width: 100%;
+  max-width: 350px;
+  min-width: 200px;
+  object-fit: cover;
+  border-radius: 8px;
+  height: 100%; /* ocupa toda a altura do wrapper */
+  display: block;
 }
