@@ -55,6 +55,7 @@ h1 {
     display: block;
 }
 
+/* Para inverter a ordem na segunda dupla */
 .dupla.invertida {
     flex-direction: row-reverse;
 }
