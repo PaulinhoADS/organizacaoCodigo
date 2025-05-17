@@ -16,7 +16,7 @@ h1 {
 /* Bloco com texto e imagem lado a lado */
 .bloco-destaque {
   display: flex;
-  align-items: center; /* Garante que texto e imagem fiquem alinhados verticalmente */
+  align-items: stretch; /* Garante que texto e imagem tenham mesma altura */
   gap: 15px;
   margin-bottom: 40px;
 }
@@ -41,13 +41,17 @@ h1 {
   min-width: 300px;
   text-align: justify;
   flex: 1; /* Faz o texto ocupar metade do espaço do bloco */
+  display: flex;
+  align-items: center;
 }
 
-/* Ajuste para a imagem ocupar o mesmo espaço que o texto */
+/* Ajuste para a imagem ter o mesmo tamanho do parágrafo */
 .imagem-destaque {
   max-width: 450px;
   min-width: 300px;
   border-radius: 8px;
   object-fit: cover;
-  flex: 1; /* Faz a imagem ocupar metade do espaço do bloco */
+  flex: 1;
+  height: auto;
+  max-height: 100%; /* Ajusta altura automática */
 }
