@@ -14,7 +14,7 @@ h1 {
 .bloco-destaque {
   display: flex;
   align-items: stretch; /* Faz a imagem e o texto terem o mesmo tamanho vertical */
-  gap: 20px;
+  gap: 15px;
   margin-bottom: 40px;
 }
 
@@ -46,7 +46,7 @@ h1 {
   width: 100%;
   max-width: 350px;
   min-width: 200px;
-  height: auto;
+  height: 90%;
   border-radius: 8px;
   object-fit: cover;
   display: flex;
